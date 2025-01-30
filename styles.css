@@ -9,8 +9,8 @@ body {
 
 .gameContainer {
     border: 2px solid black;
-    width: 480px;
-    height: 480px;
+    width: 900px;
+    height: 900px;
     margin: 0 auto;
     margin-top: 15vh;
     box-sizing: content-box;
@@ -37,4 +37,8 @@ body {
     text-align: center;
     font-size: 1.5rem;
     text-decoration: underline;
+}
+
+.blank{
+    height: 300px;
 }

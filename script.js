@@ -12,14 +12,14 @@ console.log(`Container height: ${contHeight}`);
 btn.addEventListener('click', () => {
     //start game logic
     if(btn.textContent === 'Make ART!'){
-        const sqrsPerSide = prompt('Total squares per side in grid? (Limit: 1 to 100)', 16);
+        const sqrsPerSide = prompt('Total squares per side in grid? (Limit: 1 to 200)', 16);
         console.log(typeof(sqrsPerSide));
         console.log(`Squares per side: ${sqrsPerSide}`);
         const totalSqrs = sqrsPerSide * sqrsPerSide;
         console.log(`Total Squares: ${totalSqrs}`);
         
         // valid user input case
-        if (sqrsPerSide > 0 && sqrsPerSide <= 100){
+        if (sqrsPerSide > 0 && sqrsPerSide <= 200){
             for (let i = 0; i < totalSqrs; ++i){
                 const sqr = document.createElement('div');
                 sqr.classList.add('sqr');
