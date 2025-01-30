@@ -46,5 +46,10 @@ btn.addEventListener('click', () => {
             }
             btn.textContent = 'Aww Made a mistake :( , Try again!';
         }
+
+        //invalid user input
+        else if (sqrsPerSide == null){
+        }
+        else alert('Invalid input!');
     }
 }
