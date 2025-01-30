@@ -33,6 +33,10 @@ btn.addEventListener('click', () => {
                 sqr.style.backgroundColor = 'white';
 
                 //no border for one square
+                if(totalSqrs ==1){
+                    sqr.style.border = 'none';
+                }
+                
             }
         }
     }
