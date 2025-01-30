@@ -94,7 +94,10 @@ container.addEventListener('mouseover', (event)=>{
 
             //increase per hover set to 0.1
             newSqrBgOpacity += 0.1;
-            
+
+            //set new bg color and opacity
+            const newSqrBgColor = style.backgroundColor.replace(sqrBgOpacity,`${newSqrBgOpacity}`);
+            targetSqr.style.backgroundColor = newSqrBgColor;
         }
     }
 })
