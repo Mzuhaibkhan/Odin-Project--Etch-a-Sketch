@@ -52,4 +52,16 @@ btn.addEventListener('click', () => {
         }
         else alert('Invalid input!');
     }
+
+    //reset game 
+    else if (btn.textContent === 'Aww Made a mistake :( , Try again!'){
+        const decision = confirm('Are you sure you want to reset?');
+        if(decision){
+            console.log(`reset`);
+            const sqrs =document.querySelectorAll('.sqr');
+            sqrs.forEach((sqr) => sqr.remove());
+            
+        }
+            
+    }
 }
