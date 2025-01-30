@@ -36,8 +36,15 @@ btn.addEventListener('click', () => {
                 if(totalSqrs ==1){
                     sqr.style.border = 'none';
                 }
-                
+                container.appendChild(sqr);
+
+                //check sqr width and height
+                if(i==totalSqrs-1){
+                    console.log(`Square Width: ${sqrWidth}`);
+                    console.log(`Square Height: ${sqrHeight}`);
+                }
             }
+            btn.textContent = 'Aww Made a mistake :( , Try again!';
         }
     }
 }
