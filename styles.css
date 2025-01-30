@@ -16,7 +16,6 @@ body {
     box-sizing: content-box;
     display: flex;
     flex-wrap: wrap;
-    
 }
 
 #btn {
@@ -25,4 +24,13 @@ body {
     margin-top: 5vh;
     font-size: 1.5rem;
     padding: 0.5em 1em;
+    background-color: rgb(51, 246, 207); 
+    color: rgb(17, 116, 245);
+    border: none; 
+    cursor: pointer; 
+}
+
+.text {
+    text-align: center;
+    font-size: 1.5rem;
 }
