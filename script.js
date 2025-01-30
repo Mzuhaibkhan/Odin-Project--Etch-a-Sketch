@@ -60,8 +60,14 @@ btn.addEventListener('click', () => {
             console.log(`reset`);
             const sqrs =document.querySelectorAll('.sqr');
             sqrs.forEach((sqr) => sqr.remove());
-            
+            btn.textContent = 'Make Art!';
+            let clickEvent = new Event('click');
+            btn.dispatchEvent(clickEvent);
         }
+
+        else btn.textContent = 'Aww Made a mistake :( , Try again!';
             
     }
-}
+})
+
+//hover effect
