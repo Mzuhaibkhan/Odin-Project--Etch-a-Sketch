@@ -11,20 +11,21 @@ console.log(`Container height: ${contHeight}`);
 
 btn.addEventListener('click', () => {
     //start game logic
-    if(btn.textContent === 'Start Sketching'){
+    if(btn.textContent === 'Make ART!'){
         const sqrsPerSide = prompt('Total squares per side in grid? (Limit: 1 to 100)', 16);
         console.log(typeof(sqrsPerSide));
         console.log(`Squares per side: ${sqrsPerSide}`);
-        const totalSqrs = sqrsPerSide*sqrsPerSide;
+        const totalSqrs = sqrsPerSide * sqrsPerSide;
         console.log(`Total Squares: ${totalSqrs}`);
+        
         // valid user input case
         if (sqrsPerSide > 0 && sqrsPerSide <= 100){
-            for (let i=0;i<totalSqrs;++i){
+            for (let i = 0; i < totalSqrs; ++i){
                 const sqr = document.createElement('div');
                 sqr.classList.add('sqr');
                 sqr.id = i;
-                const sqrWidth = contWidth/sqrsPerSide;
-                const sqrHeight = contHeight/sqrsPerSide;
+                const sqrWidth = contWidth / sqrsPerSide;
+                const sqrHeight = contHeight / sqrsPerSide;
                 sqr.style.width = `${sqrWidth}px`;
                 sqr.style.height = `${sqrHeight}px`;
                 sqr.style.border = 'solid 1px';
@@ -36,39 +37,43 @@ btn.addEventListener('click', () => {
                 }
                 container.appendChild(sqr);
                 // check sqr width and height
-                if(i == totalSqrs-1) {
+                if(i == totalSqrs - 1) {
                     console.log(`Square Width: ${sqrWidth}`);
                     console.log(`Square Height: ${sqrHeight}`);
                 }
             }
-            btn.textContent = 'Reset';
+            btn.textContent = 'Aww made a mistake :( , Try again ?';
         }
         // invalid user input case
-        else if (sqrsPerSide == null){}
+        else if (sqrsPerSide === null || sqrsPerSide === '') {
+            // handle null or empty input case here if needed
+        }
         else alert('Invalid input');
         
     }
     //reset game logic
-    else if(btn.textContent === 'Reset'){
+    else if(btn.textContent === 'Aww made a mistake :( , Try again ?'){
         const decision = confirm('Are you sure you want to reset?');
         if(decision){
             console.log(`reset`);
             const sqrs = document.querySelectorAll('.sqr');
-            sqrs.forEach((sqr)=>sqr.remove());
-            btn.textContent = 'Start Sketching';
+            sqrs.forEach((sqr) => sqr.remove());
+            btn.textContent = 'Make ART!';
             let clickEvent = new Event('click');
             btn.dispatchEvent(clickEvent);
         }
-        else btn.textContent = 'Reset';
+        else {
+            btn.textContent = 'Make ART!'; // Reset to 'Make ART!' if Cancel is clicked
+        }
     }
 })
 
 // sqr hover logic
 
-container.addEventListener('mouseover', (event)=>{
+container.addEventListener('mouseover', (event) => {
     const targetSqr = event.target;
     if(targetSqr.className === 'sqr'){
-        const clrRandomizer = () => Math.floor(Math.random()*201);
+        const clrRandomizer = () => Math.floor(Math.random() * 201);
         // sqr bg color randomizer logic
         if(targetSqr.style.backgroundColor === 'white'){
             const sqrBgOpacity = 0.1;
