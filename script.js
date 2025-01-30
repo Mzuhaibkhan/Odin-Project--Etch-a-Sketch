@@ -71,3 +71,19 @@ btn.addEventListener('click', () => {
 })
 
 //hover effect
+container.addEventListener('mouseover', (event)=>{
+    const targetSqr =event.target;
+    if(targetSqr.className === 'sqr'){
+        const clrRandom = () => Math.floor(Math.random()*201);
+
+        //sqr bg color random
+        if(targetSqr.style.backgroundColor === 'white'){
+            const sqrBgOpacity = 0.1;
+            const sqrBgColor = `rgb(${clrRandom()},${clrRandom()},${clrRandom()},${sqrBgOpacity})`;
+
+            targetSqr.style.backgroundColor = sqrBgColor;
+        }
+
+        
+    }
+})
